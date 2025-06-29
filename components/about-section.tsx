@@ -73,16 +73,16 @@ export function AboutSection() {
                   className="leading-relaxed mb-6"
                   style={{ color: "#d1d5db" }}
                 >
-                  With over 4+ years of experience in web development, I've had
-                  the privilege of working with startups and established
+                  With over 4+ years of experience in web development, I&apos;ve
+                  had the privilege of working with startups and established
                   companies to bring their digital visions to life. My journey
                   began with a curiosity for how things work on the web, which
                   evolved into a passion for creating seamless user experiences.
                 </p>
                 <p className="leading-relaxed" style={{ color: "#d1d5db" }}>
                   I believe in the power of clean, maintainable code and
-                  user-centered design. When I'm not coding, you can find me
-                  exploring new technologies, contributing to open-source
+                  user-centered design. When I&apos;m not coding, you can find
+                  me exploring new technologies, contributing to open-source
                   projects, or sharing knowledge with the developer community.
                 </p>
               </div>
@@ -177,61 +177,22 @@ export function AboutSection() {
                   Interests & Hobbies
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge
-                    variant="secondary"
-                    className="border"
-                    style={{
-                      backgroundColor: "rgba(45, 212, 191, 0.1)",
-                      color: "#2dd4bf",
-                      borderColor: "rgba(45, 212, 191, 0.3)",
-                    }}
-                  >
-                    Swimming
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="border"
-                    style={{
-                      backgroundColor: "rgba(45, 212, 191, 0.1)",
-                      color: "#2dd4bf",
-                      borderColor: "rgba(45, 212, 191, 0.3)",
-                    }}
-                  >
-                    Traveling
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="border"
-                    style={{
-                      backgroundColor: "rgba(45, 212, 191, 0.1)",
-                      color: "#2dd4bf",
-                      borderColor: "rgba(45, 212, 191, 0.3)",
-                    }}
-                  >
-                    Reading
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="border"
-                    style={{
-                      backgroundColor: "rgba(45, 212, 191, 0.1)",
-                      color: "#2dd4bf",
-                      borderColor: "rgba(45, 212, 191, 0.3)",
-                    }}
-                  >
-                    Gaming
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="border"
-                    style={{
-                      backgroundColor: "rgba(45, 212, 191, 0.1)",
-                      color: "#2dd4bf",
-                      borderColor: "rgba(45, 212, 191, 0.3)",
-                    }}
-                  >
-                    Tea
-                  </Badge>
+                  {["Swimming", "Traveling", "Reading", "Gaming", "Tea"].map(
+                    (item) => (
+                      <Badge
+                        key={item}
+                        variant="secondary"
+                        className="border"
+                        style={{
+                          backgroundColor: "rgba(45, 212, 191, 0.1)",
+                          color: "#2dd4bf",
+                          borderColor: "rgba(45, 212, 191, 0.3)",
+                        }}
+                      >
+                        {item}
+                      </Badge>
+                    )
+                  )}
                 </div>
               </div>
             </div>

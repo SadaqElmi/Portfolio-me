@@ -51,7 +51,7 @@ export function ContactSection() {
       } else {
         alert("Failed to send message. Please try again.");
       }
-    } catch (error) {
+    } catch {
       alert("Something went wrong.");
     }
   };
@@ -75,8 +75,8 @@ export function ContactSection() {
               className="text-lg max-w-2xl mx-auto"
               style={{ color: "#d1d5db" }}
             >
-              Have a project in mind or want to collaborate? I'd love to hear
-              from you. Let's create something amazing together.
+              Have a project in mind or want to collaborate? I&apos;d love to
+              hear from you. Let&apos;s create something amazing together.
             </p>
           </div>
 
@@ -88,13 +88,13 @@ export function ContactSection() {
                   className="text-2xl font-semibold mb-6"
                   style={{ color: "#ffffff" }}
                 >
-                  Let's Connect
+                  Let&apos;s Connect
                 </h3>
                 <p
                   className="mb-8 leading-relaxed"
                   style={{ color: "#d1d5db" }}
                 >
-                  I'm always open to discussing new opportunities, creative
+                  I&apos;m always open to discussing new opportunities, creative
                   projects, or just having a friendly chat about technology and
                   design. Feel free to reach out through any of the channels
                   below.

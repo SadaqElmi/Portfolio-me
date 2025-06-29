@@ -54,36 +54,6 @@ export function ProjectsSection() {
       githubUrl: "https://github.com/SadaqElmi/E-commerce-SomOnline",
       featured: false,
     },
-    {
-      title: "Portfolio Website",
-      description:
-        "A modern, responsive portfolio website showcasing creative work with smooth animations and optimized performance.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Framer Motion", "Styled Components", "Netlify"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
-      title: "Social Media Analytics",
-      description:
-        "A comprehensive analytics dashboard for social media metrics with data visualization and reporting features.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Python", "Django", "D3.js", "PostgreSQL", "Redis"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
-      title: "Mobile Fitness App",
-      description:
-        "A cross-platform mobile app for fitness tracking with workout plans, progress monitoring, and social features.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React Native", "Firebase", "Redux", "Expo"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
   ];
 
   const featuredProjects = projects.filter((project) => project.featured);
@@ -135,13 +105,13 @@ export function ProjectsSection() {
                     "0 0 0 0 rgba(45, 212, 191, 0)";
                 }}
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden relative">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-300"
-                    width={400}
-                    height={300}
+                    className="object-fill group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
                 </div>
@@ -228,11 +198,14 @@ export function ProjectsSection() {
                     borderColor: "rgba(45, 212, 191, 0.3)",
                   }}
                 >
-                  <div className="aspect-video overflow-hidden">
-                    <img
+                  <div className="aspect-video overflow-hidden relative">
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority
                     />
                   </div>
                   <CardHeader className="pb-2">

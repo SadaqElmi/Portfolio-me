@@ -4,43 +4,54 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 export function ProjectsSection() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Social Media App",
       description:
-        "A full-stack e-commerce solution built with Next.js, featuring user authentication, payment processing, and admin dashboard.",
-      image: "/placeholder.svg?height=300&width=400",
+        "A full-stack social media application with user authentication, real-time updates, and a modern UI for sharing content.",
+      image: "/image1.png",
       technologies: [
         "Next.js",
         "TypeScript",
-        "Stripe",
-        "PostgreSQL",
+        "NextAuth",
+        "MongoDB",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Cloundinary",
+        "Zustand",
+        "nodemailer",
+      ],
+      liveUrl: "https://social-media-app-one-black.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/SocialMediaApp",
+      featured: true,
+    },
+    {
+      title: "Appointment Doctor",
+      description:
+        "A comprehensive appointment booking system for healthcare providers with user-friendly interfaces and secure data management.",
+      image: "/image2.png",
+      technologies: [
+        "Next.js",
+        "NextAuth",
+        "MongoDB",
+        "shadcn-UI",
         "Tailwind CSS",
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://appointment-doctor-six.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/appointment-doctor",
       featured: true,
     },
     {
-      title: "Task Management App",
+      title: "E-commerce Shop",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "A responsive weather dashboard that displays current conditions and forecasts with beautiful data visualizations.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A fully functional e-commerce platform with product listings, shopping cart, and secure payment integration.",
+      image: "/image3.png",
+      technologies: ["JavaScript", "HTML", "Tailwind CSS"],
+      liveUrl: "https://somonline.netlify.app/",
+      githubUrl: "https://github.com/SadaqElmi/E-commerce-SomOnline",
       featured: false,
     },
     {
@@ -125,10 +136,13 @@ export function ProjectsSection() {
                 }}
               >
                 <div className="aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-300"
+                    width={400}
+                    height={300}
+                    priority
                   />
                 </div>
                 <CardHeader>

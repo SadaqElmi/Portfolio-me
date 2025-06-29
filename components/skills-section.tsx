@@ -8,20 +8,20 @@ export function SkillsSection() {
       title: "Frontend Development",
       icon: Code,
       skills: [
-        { name: "React/Next.js", level: 95 },
+        { name: "/Next.js", level: 95 },
         { name: "TypeScript", level: 90 },
         { name: "Tailwind CSS", level: 92 },
-        { name: "Vue.js", level: 85 },
+        { name: "Reactjs", level: 95 },
       ],
     },
     {
       title: "Backend Development",
       icon: Server,
       skills: [
+        { name: "MongoDB", level: 90 },
         { name: "Node.js", level: 88 },
-        { name: "Python", level: 82 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 },
+        { name: "Python", level: 72 },
+        { name: "PostgreSQL", level: 50 },
       ],
     },
     {
@@ -30,18 +30,18 @@ export function SkillsSection() {
       skills: [
         { name: "Figma", level: 90 },
         { name: "Adobe XD", level: 85 },
-        { name: "Prototyping", level: 88 },
         { name: "User Research", level: 75 },
+        { name: "Prototyping", level: 50 },
       ],
     },
     {
       title: "Mobile Development",
       icon: Smartphone,
       skills: [
-        { name: "React Native", level: 85 },
-        { name: "Flutter", level: 70 },
-        { name: "iOS Development", level: 65 },
+        { name: "React Native", level: 95 },
         { name: "Android Development", level: 68 },
+        { name: "iOS Development", level: 65 },
+        { name: "Flutter", level: 50 },
       ],
     },
   ];
@@ -57,8 +57,29 @@ export function SkillsSection() {
     "Prisma",
     "GraphQL",
     "REST APIs",
-    "Jest",
-    "Cypress",
+    "Test",
+    "shadcn/ui",
+    "Tailwind CSS",
+    "Material-UI",
+    "Bootstrap",
+    "Ant Design",
+    "Redux",
+
+    "React Query",
+    "Next.js",
+    "Webpack",
+    "Babel",
+    "ESLint",
+    "Prettier",
+    "Postman",
+    "Swagger",
+    "Jira",
+
+    "Notion",
+    "Zoom",
+    "Microsoft Teams",
+    "Discord",
+    "GitHub",
   ];
 
   return (

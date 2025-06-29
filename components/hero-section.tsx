@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function HeroSection() {
   const scrollToAbout = () => {
@@ -14,7 +15,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
       style={{
         background:
           "linear-gradient(135deg, #0a1a1a 0%, #1a3d3d 50%, #2c5364 100%)",
@@ -34,12 +35,21 @@ export function HeroSection() {
                 background: "linear-gradient(135deg, #2dd4bf 0%, #34d399 100%)",
               }}
             >
-              <span className="text-4xl font-bold text-white">JD</span>
+              <span className="text-4xl font-bold text-white">
+                <Image
+                  src="/Sadaq.jpg"
+                  alt="Sadaq Elmi"
+                  width={128}
+                  height={128}
+                  className="rounded-full object-cover"
+                  priority
+                />
+              </span>
             </div>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-            <span className="text-white">John </span>
+            <span className="text-white">Sadaq </span>
             <span
               className="bg-clip-text text-transparent"
               style={{
@@ -48,7 +58,7 @@ export function HeroSection() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Doe
+              Elmi
             </span>
           </h1>
 
@@ -56,7 +66,7 @@ export function HeroSection() {
             className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto"
             style={{ color: "#2dd4bf" }}
           >
-            Full Stack Developer & UI/UX Designer
+            Full Stack Developer & Mobile Developer
           </p>
 
           <p
@@ -79,27 +89,35 @@ export function HeroSection() {
             >
               View My Work
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="min-w-[160px] bg-transparent"
-              style={{
-                borderColor: "#2dd4bf",
-                color: "#2dd4bf",
-              }}
-            >
-              Download CV
-            </Button>
+            <a href="/cv.pdf" download>
+              <Button
+                variant="outline"
+                size="lg"
+                className="min-w-[160px] bg-transparent"
+                style={{
+                  borderColor: "#2dd4bf",
+                  color: "#2dd4bf",
+                }}
+              >
+                Download CV
+              </Button>
+            </a>
           </div>
 
-          <div className="flex justify-center space-x-6 mb-12">
+          <div className="flex justify-center space-x-6 mb-12 ">
             <Button
               variant="ghost"
               size="icon"
-              className="h-12 w-12 hover:bg-teal-500/20"
+              className="h-12 w-12 hover:bg-teal-500/20 "
               style={{ color: "#2dd4bf" }}
             >
-              <Github className="h-6 w-6" />
+              <a
+                href="https://github.com/SadaqElmi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-6 w-6" />
+              </a>
             </Button>
             <Button
               variant="ghost"
@@ -107,7 +125,13 @@ export function HeroSection() {
               className="h-12 w-12 hover:bg-teal-500/20"
               style={{ color: "#2dd4bf" }}
             >
-              <Linkedin className="h-6 w-6" />
+              <a
+                href="https://www.linkedin.com/in/sadaq-elmi-abdulle-b638a2253/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
             </Button>
             <Button
               variant="ghost"
@@ -115,7 +139,9 @@ export function HeroSection() {
               className="h-12 w-12 hover:bg-teal-500/20"
               style={{ color: "#2dd4bf" }}
             >
-              <Mail className="h-6 w-6" />
+              <a href="mailto:sadaqelmi.dev@gmail.com">
+                <Mail className="h-6 w-6" />
+              </a>
             </Button>
           </div>
 

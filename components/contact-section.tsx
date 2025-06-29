@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,13 +16,7 @@ export function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,13 +27,40 @@ export function ContactSection() {
     }));
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formDataObj = new FormData(form);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/sadaqelmi.dev@gmail.com",
+        {
+          method: "POST",
+          body: formDataObj,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        setMessageSent(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setMessageSent(false), 5000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong.");
+    }
+  };
+
   return (
     <section
       id="contact"
       className="py-20"
-      style={{
-        backgroundColor: "#0a1a1a",
-      }}
+      style={{ backgroundColor: "#0a1a1a" }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -61,7 +81,7 @@ export function ContactSection() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+            {/* Contact Info */}
             <div className="space-y-8">
               <div>
                 <h3
@@ -81,8 +101,31 @@ export function ContactSection() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              {[
+                {
+                  icon: (
+                    <Mail className="h-6 w-6" style={{ color: "#2dd4bf" }} />
+                  ),
+                  label: "Email",
+                  value: "sadaqelmi.dev@example.com",
+                },
+                {
+                  icon: (
+                    <Phone className="h-6 w-6" style={{ color: "#2dd4bf" }} />
+                  ),
+                  label: "Phone",
+                  value: "(+252) 619316187",
+                },
+                {
+                  icon: (
+                    <MapPin className="h-6 w-6" style={{ color: "#2dd4bf" }} />
+                  ),
+                  label: "Location",
+                  value: "Somalia, Mogadishu",
+                },
+              ].map((item, idx) => (
                 <Card
+                  key={idx}
                   className="border"
                   style={{
                     backgroundColor: "rgba(26, 47, 47, 0.5)",
@@ -92,83 +135,22 @@ export function ContactSection() {
                   <CardContent className="p-6 flex items-center space-x-4">
                     <div
                       className="p-3 rounded-lg"
-                      style={{
-                        backgroundColor: "rgba(45, 212, 191, 0.2)",
-                      }}
+                      style={{ backgroundColor: "rgba(45, 212, 191, 0.2)" }}
                     >
-                      <Mail className="h-6 w-6" style={{ color: "#2dd4bf" }} />
+                      {item.icon}
                     </div>
                     <div>
                       <h4
                         className="font-semibold"
                         style={{ color: "#ffffff" }}
                       >
-                        Email
+                        {item.label}
                       </h4>
-                      <p style={{ color: "#d1d5db" }}>john.doe@example.com</p>
+                      <p style={{ color: "#d1d5db" }}>{item.value}</p>
                     </div>
                   </CardContent>
                 </Card>
-
-                <Card
-                  className="border"
-                  style={{
-                    backgroundColor: "rgba(26, 47, 47, 0.5)",
-                    borderColor: "rgba(45, 212, 191, 0.3)",
-                  }}
-                >
-                  <CardContent className="p-6 flex items-center space-x-4">
-                    <div
-                      className="p-3 rounded-lg"
-                      style={{
-                        backgroundColor: "rgba(45, 212, 191, 0.2)",
-                      }}
-                    >
-                      <Phone className="h-6 w-6" style={{ color: "#2dd4bf" }} />
-                    </div>
-                    <div>
-                      <h4
-                        className="font-semibold"
-                        style={{ color: "#ffffff" }}
-                      >
-                        Phone
-                      </h4>
-                      <p style={{ color: "#d1d5db" }}>+1 (555) 123-4567</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card
-                  className="border"
-                  style={{
-                    backgroundColor: "rgba(26, 47, 47, 0.5)",
-                    borderColor: "rgba(45, 212, 191, 0.3)",
-                  }}
-                >
-                  <CardContent className="p-6 flex items-center space-x-4">
-                    <div
-                      className="p-3 rounded-lg"
-                      style={{
-                        backgroundColor: "rgba(45, 212, 191, 0.2)",
-                      }}
-                    >
-                      <MapPin
-                        className="h-6 w-6"
-                        style={{ color: "#2dd4bf" }}
-                      />
-                    </div>
-                    <div>
-                      <h4
-                        className="font-semibold"
-                        style={{ color: "#ffffff" }}
-                      >
-                        Location
-                      </h4>
-                      <p style={{ color: "#d1d5db" }}>San Francisco, CA</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              ))}
 
               <div>
                 <h4 className="font-semibold mb-4" style={{ color: "#ffffff" }}>
@@ -195,7 +177,19 @@ export function ContactSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
+                {messageSent && (
+                  <p className="text-green-400 text-sm mb-4">
+                    ✅ Message sent successfully!
+                  </p>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New message from portfolio"
+                  />
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label

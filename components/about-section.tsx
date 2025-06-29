@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Award } from "lucide-react";
+import Image from "next/image";
 
 export function AboutSection() {
   return (
@@ -46,7 +47,16 @@ export function AboutSection() {
                       "linear-gradient(135deg, #2dd4bf 0%, #34d399 100%)",
                   }}
                 >
-                  <span className="text-6xl font-bold text-white">JD</span>
+                  <span className="text-6xl font-bold text-white">
+                    <Image
+                      src="/Sadaq.jpg"
+                      alt="Sadaq Elmi"
+                      width={256}
+                      height={256}
+                      className="rounded-full object-cover"
+                      priority
+                    />
+                  </span>
                 </div>
               </div>
             </div>
@@ -63,7 +73,7 @@ export function AboutSection() {
                   className="leading-relaxed mb-6"
                   style={{ color: "#d1d5db" }}
                 >
-                  With over 5 years of experience in web development, I've had
+                  With over 4+ years of experience in web development, I've had
                   the privilege of working with startups and established
                   companies to bring their digital visions to life. My journey
                   began with a curiosity for how things work on the web, which
@@ -95,7 +105,7 @@ export function AboutSection() {
                         Experience
                       </p>
                       <p className="text-sm" style={{ color: "#d1d5db" }}>
-                        5+ Years
+                        4+ Years
                       </p>
                     </div>
                   </CardContent>
@@ -115,7 +125,7 @@ export function AboutSection() {
                         Location
                       </p>
                       <p className="text-sm" style={{ color: "#d1d5db" }}>
-                        San Francisco, CA
+                        Somalia, Mogadishu
                       </p>
                     </div>
                   </CardContent>
@@ -135,7 +145,7 @@ export function AboutSection() {
                         Projects
                       </p>
                       <p className="text-sm" style={{ color: "#d1d5db" }}>
-                        50+ Completed
+                        10+ Completed
                       </p>
                     </div>
                   </CardContent>
@@ -155,7 +165,7 @@ export function AboutSection() {
                         Clients
                       </p>
                       <p className="text-sm" style={{ color: "#d1d5db" }}>
-                        25+ Happy
+                        10+ Happy
                       </p>
                     </div>
                   </CardContent>
@@ -176,7 +186,7 @@ export function AboutSection() {
                       borderColor: "rgba(45, 212, 191, 0.3)",
                     }}
                   >
-                    Photography
+                    Swimming
                   </Badge>
                   <Badge
                     variant="secondary"
@@ -187,7 +197,7 @@ export function AboutSection() {
                       borderColor: "rgba(45, 212, 191, 0.3)",
                     }}
                   >
-                    Open Source
+                    Traveling
                   </Badge>
                   <Badge
                     variant="secondary"
@@ -198,7 +208,7 @@ export function AboutSection() {
                       borderColor: "rgba(45, 212, 191, 0.3)",
                     }}
                   >
-                    Tech Blogging
+                    Reading
                   </Badge>
                   <Badge
                     variant="secondary"
@@ -209,7 +219,7 @@ export function AboutSection() {
                       borderColor: "rgba(45, 212, 191, 0.3)",
                     }}
                   >
-                    Hiking
+                    Gaming
                   </Badge>
                   <Badge
                     variant="secondary"
@@ -220,7 +230,7 @@ export function AboutSection() {
                       borderColor: "rgba(45, 212, 191, 0.3)",
                     }}
                   >
-                    Coffee
+                    Tea
                   </Badge>
                 </div>
               </div>

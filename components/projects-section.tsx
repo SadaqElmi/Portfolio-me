@@ -45,6 +45,33 @@ export function ProjectsSection() {
       featured: true,
     },
     {
+      title: "Project Shoes",
+      description:
+        "An e-commerce platform for footwear with product listings, shopping cart functionality, and secure payment options.",
+      image: "/image4.png",
+      technologies: [
+        "React",
+        "framer-motion",
+        "Tailwind CSS",
+        "react-scroll",
+        "Redux",
+        "aos",
+      ],
+      liveUrl: "https://project-shoes-orpin.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/Project-Shoes",
+      featured: false,
+    },
+    {
+      title: "Car Rental App",
+      description:
+        "A car rental application with user authentication, vehicle listings, and booking functionality.",
+      image: "/image5.png",
+      technologies: ["JavaScript", "HTML", "Tailwind CSS"],
+      liveUrl: "https://lpgtmc.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/LPGTMC",
+      featured: false,
+    },
+    {
       title: "E-commerce Shop",
       description:
         "A fully functional e-commerce platform with product listings, shopping cart, and secure payment integration.",

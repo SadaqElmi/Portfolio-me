@@ -9,9 +9,9 @@ export function SkillsSection() {
       icon: Code,
       skills: [
         { name: "Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 92 },
         { name: "Reactjs", level: 95 },
+        { name: "TypeScript", level: 95 },
+        { name: "JavaScript", level: 92 },
       ],
     },
     {

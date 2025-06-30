@@ -81,6 +81,35 @@ export function ProjectsSection() {
       githubUrl: "https://github.com/SadaqElmi/E-commerce-SomOnline",
       featured: false,
     },
+    {
+      title: "Farlight 84",
+      description:
+        "A fan-made website for the game Farlight 84, showcasing game features, news, and community content.",
+      image: "/image6.png",
+      technologies: ["JavaScript", "HTML", "CSS3"],
+      liveUrl: "https://farlight-web.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/farlight-web",
+      featured: false,
+    },
+    {
+      title: "Hotel Booking App",
+      description:
+        "A hotel booking application with user authentication, room listings, and booking management.",
+      image: "/image7.png",
+      technologies: ["JavaScript", "HTML", "CSS3"],
+      liveUrl: "https://bakaro-hotel.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/BakaroHotel",
+      featured: false,
+    },
+    {
+      title: "Super Market App(SUUQ)",
+      description: "A supermarket application with product listings",
+      image: "/image8.png",
+      technologies: ["JavaScript", "HTML", "CSS3"],
+      liveUrl: "https://suuq-two.vercel.app/",
+      githubUrl: "https://github.com/SadaqElmi/Suuq",
+      featured: false,
+    },
   ];
 
   const featuredProjects = projects.filter((project) => project.featured);
